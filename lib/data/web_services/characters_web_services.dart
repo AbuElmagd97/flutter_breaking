@@ -4,6 +4,7 @@ import 'package:flutter_breaking/constants/strings.dart';
 class CharactersWebServices {
   late Dio dio;
 
+  ///Basic Option of dio
   CharactersWebServices() {
     BaseOptions options = BaseOptions(
       baseUrl: baseUrl,
@@ -14,6 +15,7 @@ class CharactersWebServices {
     dio = Dio(options);
   }
 
+  /// a function that get all Characters from server
   Future<List<dynamic>> getAllCharacters() async {
     try {
       Response response = await dio.get('characters');
